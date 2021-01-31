@@ -1,0 +1,34 @@
+{
+  "name": "baby-yoda",
+  "description": "A tiny (≈ 500b) layout animation module for react",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/baby-yoda.js",
+  "module": "dist/baby-yoda.mjs",
+  "files": [
+    "dist/**/*"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prod": "node scripts/cjs && node scripts/esm && gzip -c dist/baby-yoda.mjs | wc -c",
+    "preview": "node scripts/preview",
+    "watch": "watchman-make -p 'index.js' 'preview.js' --run \"npm run preview\"",
+    "serve": "node server.cjs",
+    "prepare": "npm run prod"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.8.38",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "polka": "^0.5.2",
+    "prettier": "^2.2.1",
+    "serve-static": "^1.14.1"
+  }
+}
