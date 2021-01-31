@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 
 export function Grogu({ children, duration = 300, easing = "ease" }) {
   const ref = useRef();
@@ -65,10 +65,14 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
   );
 }
 
-class GetSnapshotBeforeUpdate extends Component {
+class GetSnapshotBeforeUpdate extends React.Component {
   getSnapshotBeforeUpdate() {
     this.props.callback?.();
+    return null;
   }
+
+  componentDidUpdate() {}
+
   render() {
     return null;
   }
