@@ -1,16 +1,16 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React from "react";
 
 export function Grogu({ children, duration = 300, easing = "ease" }) {
-  const ref = useRef();
-  const theChild = useRef();
-  const boundingClientRectSnapshot = useRef();
+  const ref = React.useRef();
+  const theChild = React.useRef();
+  const boundingClientRectSnapshot = React.useRef();
 
-  useEffect(() => {
+  React.useEffect(() => {
     theChild.current = ref.current.children[0];
     theChild.current.style.transformOrigin = "left top";
   }, []);
 
-  useLayoutEffect(() => {
+  React.useLayoutEffect(() => {
     if (boundingClientRectSnapshot.current) {
       const {
         x: x0,
