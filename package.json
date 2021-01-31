@@ -10,7 +10,7 @@
   "exports": {
     ".": {
       "import": "./dist/baby-yoda.mjs",
-      "require": "./dist/baby-yoda.js"
+      "require": "./dist/baby-yoda.cjs"
     },
     "./package.json": "./package.json"
   },
