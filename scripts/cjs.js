@@ -2,7 +2,7 @@ import esbuild from "esbuild";
 
 esbuild.buildSync({
   entryPoints: ["./index.js"],
-  outfile: "./dist/baby-yoda.js",
+  outfile: "./dist/baby-yoda.cjs",
   platform: "node",
   format: "cjs",
   loader: { ".js": "jsx" },

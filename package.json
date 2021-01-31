@@ -3,11 +3,15 @@
   "description": "A tiny (≈ 500b) layout animation module for react",
   "version": "0.1.2",
   "type": "module",
-  "main": "dist/baby-yoda.js",
+  "main": "dist/baby-yoda.cjs",
   "module": "dist/baby-yoda.mjs",
   "files": [
     "dist/**/*"
   ],
+  "exports": {
+    ".": "./dist/baby-yoda.cjs",
+    "./module": "./dist/baby-yoda.mjs"
+  },
   "license": "MIT",
   "scripts": {
     "prod": "node scripts/cjs && node scripts/esm && gzip -c dist/baby-yoda.mjs | wc -c",
