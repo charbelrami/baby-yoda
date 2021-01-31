@@ -3,7 +3,6 @@
   "description": "A tiny (≈ 500b) layout animation module for react",
   "version": "0.1.6",
   "main": "dist/baby-yoda.cjs",
-  "module": "./dist/baby-yoda.mjs",
   "files": [
     "dist/**/*"
   ],
