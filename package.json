@@ -4,13 +4,12 @@
   "version": "0.1.3",
   "type": "module",
   "main": "dist/baby-yoda.cjs",
-  "module": "dist/baby-yoda.mjs",
   "files": [
     "dist/**/*"
   ],
   "exports": {
-    ".": "./dist/baby-yoda.cjs",
-    "./module": "./dist/baby-yoda.mjs"
+    "import": "./dist/baby-yoda.mjs",
+    "require": "./dist/baby-yoda.cjs"
   },
   "license": "MIT",
   "scripts": {
