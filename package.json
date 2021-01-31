@@ -8,11 +8,8 @@
     "dist"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/baby-yoda.mjs",
-      "require": "./dist/baby-yoda.cjs"
-    },
-    "./package.json": "./package.json"
+    "import": "./dist/baby-yoda.mjs",
+    "require": "./dist/baby-yoda.cjs"
   },
   "license": "MIT",
   "scripts": {
