@@ -7,11 +7,11 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
 
   React.useEffect(() => {
     theChild.current = ref.current.children[0];
-    theChild.current.style.transformOrigin = "left top";
+    if (theChild.current) theChild.current.style.transformOrigin = "left top";
   }, []);
 
   React.useLayoutEffect(() => {
-    if (boundingClientRectSnapshot.current) {
+    if (boundingClientRectSnapshot.current && theChild.current) {
       const {
         x: x0,
         y: y0,
@@ -23,7 +23,7 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
         y,
         width: w,
         height: h,
-      } = theChild.current?.getBoundingClientRect();
+      } = theChild.current.getBoundingClientRect();
 
       const dy = y0 - y;
       const dx = x0 - x;
