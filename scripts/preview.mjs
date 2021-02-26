@@ -1,13 +1,22 @@
 import esbuild from "esbuild";
+import { srcDir, serveDir, port } from "./config.mjs";
 
-esbuild.buildSync({
-  entryPoints: ["./preview.js"],
-  outfile: "./preview/dist/preview.mjs",
-  platform: "browser",
-  format: "esm",
-  loader: { ".js": "jsx" },
-  bundle: true,
-  define: {
-    "process.env.NODE_ENV": '"development"',
+esbuild.serve(
+  {
+    port,
+    servedir: serveDir,
   },
-});
+  {
+    entryPoints: [`${serveDir}/index.js`],
+    outfile: `${serveDir}/dist/index.mjs`,
+    platform: "browser",
+    format: "esm",
+    loader: { ".js": "jsx" },
+    inject: [`${srcDir}/react-shim.js`],
+    bundle: true,
+    sourcemap: true,
+    define: {
+      "process.env.NODE_ENV": '"development"',
+    },
+  }
+);

@@ -1,11 +1,13 @@
 import esbuild from "esbuild";
+import { srcDir, distDir } from "./config.mjs";
 
 esbuild.buildSync({
-  entryPoints: ["./index.js"],
-  outfile: "./dist/baby-yoda.cjs",
-  platform: "node",
+  entryPoints: [`${srcDir}/index.js`],
+  outfile: `${distDir}/index.cjs`,
+  platform: "browser",
   format: "cjs",
   loader: { ".js": "jsx" },
+  inject: [`${srcDir}/react-shim.js`],
   bundle: true,
   external: ["react", "react-dom"],
   minify: true,

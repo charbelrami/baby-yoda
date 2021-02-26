@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { Grogu } from "./index";
+import { Grogu } from "../src";
 
 function shuffleArray(a) {
   for (let i = a.length; i--; ) {
@@ -34,15 +34,42 @@ function App() {
       ))}
 
       <button onClick={() => setToggle((prev) => !prev)}>toggle</button>
-      <Grogu duration={200} easing="ease-in-out">
-        <div
-          style={{
-            background: "#79c3c9",
-            width: toggle ? "300px" : "500px",
-            height: toggle ? "300px" : "200px",
-          }}
-        ></div>
-      </Grogu>
+      <div
+        style={{
+          display: "grid",
+          placeItems: "center",
+          height: "500px",
+        }}
+      >
+        <Grogu>
+          <div
+            style={{
+              width: toggle ? "300px" : "500px",
+              height: toggle ? "300px" : "200px",
+              background: "#79c3c9",
+            }}
+          ></div>
+        </Grogu>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: toggle ? "flex-end" : "flex-start",
+          width: "500px",
+          background: "#44a0a7",
+        }}
+      >
+        <Grogu>
+          <div
+            style={{
+              width: "200px",
+              height: "200px",
+              background: "#79c3c9",
+            }}
+          ></div>
+        </Grogu>
+      </div>
     </React.StrictMode>
   );
 }

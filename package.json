@@ -1,22 +1,20 @@
 {
   "name": "baby-yoda",
-  "description": "A tiny (524B) layout animation module for react",
+  "description": "A tiny (520B) layout animation module for react",
   "version": "0.1.14",
-  "main": "dist/baby-yoda.cjs",
-  "module": "dist/baby-yoda.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "files": [
     "dist"
   ],
   "exports": {
-    "import": "./dist/baby-yoda.mjs",
-    "require": "./dist/baby-yoda.cjs"
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
   },
   "license": "MIT",
   "scripts": {
-    "prod": "node scripts/cjs.mjs && node scripts/esm.mjs && gzip -c dist/baby-yoda.mjs | wc -c",
+    "prod": "node scripts/cjs.mjs && node scripts/esm.mjs && gzip -c dist/index.mjs | wc -c",
     "preview": "node scripts/preview.mjs",
-    "watch": "watchman-make -p 'index.js' 'preview.js' --run \"npm run preview\"",
-    "serve": "node server.cjs",
     "prepare": "npm run prod"
   },
   "peerDependencies": {
@@ -24,14 +22,12 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "esbuild": "^0.8.42",
-    "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
+    "esbuild": "^0.8.52",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "polka": "^0.5.2",
-    "prettier": "^2.2.1",
-    "serve-static": "^1.14.1"
+    "prettier": "^2.2.1"
   }
 }
