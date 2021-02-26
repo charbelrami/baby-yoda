@@ -1,3 +1,5 @@
+import React from "react";
+
 export function Grogu({ children, duration = 300, easing = "ease" }) {
   const ref = React.useRef();
   const theChild = React.useRef();

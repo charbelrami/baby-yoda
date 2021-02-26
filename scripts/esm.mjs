@@ -7,7 +7,6 @@ esbuild.buildSync({
   platform: "browser",
   format: "esm",
   loader: { ".js": "jsx" },
-  inject: [`${srcDir}/react-shim.js`],
   bundle: true,
   external: ["react", "react-dom"],
   minify: true,

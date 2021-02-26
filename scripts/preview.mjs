@@ -1,5 +1,5 @@
 import esbuild from "esbuild";
-import { srcDir, serveDir, port } from "./config.mjs";
+import { serveDir, port } from "./config.mjs";
 
 esbuild.serve(
   {
@@ -12,7 +12,6 @@ esbuild.serve(
     platform: "browser",
     format: "esm",
     loader: { ".js": "jsx" },
-    inject: [`${srcDir}/react-shim.js`],
     bundle: true,
     sourcemap: true,
     define: {
