@@ -39,8 +39,11 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
         },
         { duration: 0 }
       );
+
+      let animation1;
+
       animation0.addEventListener("finish", () => {
-        theChild.current.animate(
+        animation1 = theChild.current.animate(
           {
             transform: [
               `translate3D(${dx}px, ${dy}px, 0) scale(${dw}, ${dh})`,
@@ -50,6 +53,8 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
           { duration, easing }
         );
       });
+
+      return () => animation1.cancel();
     }
   });
 

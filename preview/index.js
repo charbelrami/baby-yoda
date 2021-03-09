@@ -41,7 +41,7 @@ function App() {
           height: "500px",
         }}
       >
-        <Grogu>
+        <Grogu duration={1000}>
           <div
             style={{
               width: toggle ? "300px" : "500px",
@@ -60,7 +60,7 @@ function App() {
           background: "#44a0a7",
         }}
       >
-        <Grogu>
+        <Grogu duration={1000}>
           <div
             style={{
               width: "200px",

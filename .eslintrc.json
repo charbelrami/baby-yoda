@@ -16,8 +16,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react"
+    "prettier"
   ],
   "rules": {
     "no-unused-vars": 1,
@@ -27,5 +26,10 @@
   "globals": {
     "React": true,
     "page": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
