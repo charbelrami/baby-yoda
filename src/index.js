@@ -11,7 +11,7 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
   }, []);
 
   React.useLayoutEffect(() => {
-    if (boundingClientRectSnapshot.current && theChild.current) {
+    if (boundingClientRectSnapshot.current) {
       const {
         x: x0,
         y: y0,
@@ -72,7 +72,7 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
 
 class GetSnapshotBeforeUpdate extends React.Component {
   getSnapshotBeforeUpdate() {
-    this.props.callback?.();
+    this.props.callback();
     return null;
   }
 

@@ -1,6 +1,6 @@
 # baby-yoda
 
-> A tiny (532B) layout animation module for react
+> A tiny (527B) layout animation module for react
 
 - 🥚 **tiny**
 - 🛸 **fast**: [FLIP animations](https://aerotwist.com/blog/flip-your-animations/) and Web Animations API
