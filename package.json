@@ -1,6 +1,6 @@
 {
   "name": "baby-yoda",
-  "description": "A tiny (547B) layout animation module for react",
+  "description": "A tiny (537B) layout animation module for react",
   "version": "0.2.1",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
