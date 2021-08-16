@@ -1,13 +1,13 @@
 import React from "react";
 
 export function Grogu({ children, duration = 300, easing = "ease" }) {
-  const ref = React.useRef();
-  const theChild = React.useRef();
+  const theChild = React.useRef(null);
   const boundingClientRectSnapshot = React.useRef();
 
-  React.useEffect(() => {
-    theChild.current = ref.current.children[0];
-    if (theChild.current) theChild.current.style.transformOrigin = "left top";
+  const ref = React.useCallback((node) => {
+    if (!node?.firstChild) return;
+    theChild.current = node.firstChild;
+    theChild.current.style.transformOrigin = "left top";
   }, []);
 
   React.useLayoutEffect(() => {
@@ -62,7 +62,8 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
     <div ref={ref}>
       <GetSnapshotBeforeUpdate
         callback={() => {
-          boundingClientRectSnapshot.current = theChild.current?.getBoundingClientRect();
+          boundingClientRectSnapshot.current =
+            theChild.current?.getBoundingClientRect();
         }}
       />
       {children}
