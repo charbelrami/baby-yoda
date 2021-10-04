@@ -1,4 +1,5 @@
 {
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -11,20 +12,19 @@
     "es2021": true,
     "jest": true
   },
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "rules": {
-    "no-unused-vars": 1,
-    "react/prop-types": 0,
-    "react/react-in-jsx-scope": 0
+    "@typescript-eslint/ban-ts-comment": 0
   },
   "globals": {
-    "React": true,
     "page": true
   },
   "settings": {

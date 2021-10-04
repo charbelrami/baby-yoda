@@ -1,14 +1,10 @@
 import esbuild from "esbuild";
-import { serveDir, port } from "./config.mjs";
 
 esbuild.serve(
+  { port: 3000, servedir: "preview" },
   {
-    port,
-    servedir: serveDir,
-  },
-  {
-    entryPoints: [`${serveDir}/index.js`],
-    outfile: `${serveDir}/dist/index.mjs`,
+    entryPoints: ["preview/index.js"],
+    outfile: "preview/dist/index.mjs",
     platform: "browser",
     format: "esm",
     loader: { ".js": "jsx" },

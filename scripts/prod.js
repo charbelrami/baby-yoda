@@ -1,9 +1,8 @@
 import esbuild from "esbuild";
-import { srcDir, distDir } from "./config.mjs";
 
 esbuild.buildSync({
-  entryPoints: [`${srcDir}/index.js`],
-  outfile: `${distDir}/index.mjs`,
+  entryPoints: ["src/index.js"],
+  outfile: "dist/index.js",
   platform: "browser",
   format: "esm",
   loader: { ".js": "jsx" },

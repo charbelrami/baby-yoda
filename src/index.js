@@ -54,7 +54,10 @@ export function Grogu({ children, duration = 300, easing = "ease" }) {
         );
       });
 
-      return () => animation1.cancel();
+      return () => {
+        animation0?.cancel();
+        animation1?.cancel();
+      };
     }
   });
 
