@@ -1,6 +1,6 @@
 .DS_Store
-/.vscode/
-/coverage/
-node_modules
-*.log*
+.vscode/
+node_modules/
+coverage/
 dist/
+*.log*

@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Grogu } from "../src";
 
 function shuffleArray(a) {
@@ -10,7 +10,7 @@ function shuffleArray(a) {
   return [...a];
 }
 
-function App() {
+function Root() {
   const [toggle, setToggle] = React.useState(false);
 
   const [list, setList] = React.useState([
@@ -38,14 +38,15 @@ function App() {
         style={{
           display: "grid",
           placeItems: "center",
-          height: "500px",
+          height: "20rem",
         }}
       >
         <Grogu duration={1000}>
           <div
             style={{
-              width: toggle ? "300px" : "500px",
-              height: toggle ? "300px" : "200px",
+              transformOrigin: "0 0",
+              width: toggle ? "20rem" : "25rem",
+              height: toggle ? "20rem" : "10rem",
               background: "#79c3c9",
             }}
           ></div>
@@ -74,6 +75,8 @@ function App() {
   );
 }
 
-const root = document.getElementById("root");
-
-ReactDom.render(<App />, root);
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <Root />
+  </React.StrictMode>
+);

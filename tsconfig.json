@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "checkJs": false,
     "declaration": true,
@@ -9,8 +9,8 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react",
-    "module": "ES2020",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "newLine": "lf",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -20,10 +20,10 @@
     "noUnusedParameters": true,
     "outDir": "dist",
     "removeComments": true,
-    "resolveJsonModule": false,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2020"
+    "target": "ESNext"
   },
-  "include": ["src/index.js"]
+  "include": ["src/**/*"]
 }
